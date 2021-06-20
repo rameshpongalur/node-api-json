@@ -3,25 +3,26 @@
 use Drupal\Core\Form\FormStateInterface;
 
 
+
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_id_alter().
  */
 
 function node_page_json_form_system_site_information_settings_alter(&$form, $form_state, $form_id)  {
 
   // Getting site api key value from configuration
-    $site_api_key = \Drupal::config('node_page_json.settings')->get('siteapikey');
-    // Adding new form field to get value from user
-    $form['siteapikey'] =  [
-        '#type' => 'textfield',
-        '#title' => t('Site API Key'),
-        '#description' => t('Enter your Site API key value.'),
-        '#default_value' => $site_api_key,
-    ];
-    // Changing submit button text as 'Update Configuration'
-    $form['actions']['submit']['#value'] = t('Update configuration');
-    // custom submit handler
-    $form['#submit'][] = 'node_page_site_api_key_submit';
+  $site_api_key = \Drupal::config('node_page_json.settings')->get('siteapikey');
+  // Adding new form field to get value from user
+  $form['siteapikey'] =  [
+    '#type' => 'textfield',
+    '#title' => t('Site API Key'),
+    '#description' => t('Enter your Site API key value.'),
+    '#default_value' => $site_api_key,
+  ];
+  // Changing submit button text as 'Update Configuration'
+  $form['actions']['submit']['#value'] = t('Update configuration');
+  // custom submit handler
+  $form['#submit'][] = 'node_page_site_api_key_submit';
 }
 
 /**
