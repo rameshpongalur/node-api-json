@@ -1,0 +1,9 @@
+node_page_json.settings:
+  type: mapping
+  label: 'Site API Key settings'
+  mapping:
+    siteapikey:
+      type: string
+      label: 'Default API Key'
+dependencies:
+    - node_page_json
