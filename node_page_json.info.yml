@@ -1,0 +1,6 @@
+name: Node Page Json
+type: module
+description: "Show node values in json format."
+package: Custom
+core_version_requirement: ^8 || ^9
+

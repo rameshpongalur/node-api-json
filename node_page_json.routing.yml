@@ -1,0 +1,10 @@
+node_page_json.values:
+  path: '/page_json/{apikey}/{node}'
+  defaults:
+    _controller: '\Drupal\node_page_json\Controller\NodePageController::content'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
